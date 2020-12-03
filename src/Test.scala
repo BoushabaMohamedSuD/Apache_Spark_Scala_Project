@@ -52,6 +52,21 @@ object Test {
     
     
     
+    /*
+     * 
+     * for our case, we have no idea who the user is, all users have been selected randomly,
+     * so the best approach system in our case is to use Collaborative Recommendation Filtering,
+     * 
+     * 
+     * 
+     * */
+    
+    
+    
+    ////// Question 6 //////////////////////////////
+    
+    
+    
     
     
   }
