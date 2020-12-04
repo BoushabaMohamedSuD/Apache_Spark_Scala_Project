@@ -175,6 +175,27 @@ object Test {
     
     ////////Q6 
     
+    val dataSQL= sparkSQL.read.option("header", "true").csv("C:/Users/med19/Desktop/Mohamed/INPT/Spark_Scala/Data/sample_data_final_wh.txt");
+   
+    //dataSQL.randomSplit([1.0, 2.0,0.6,0.5,1.3]);
+    
+    dataSQL.show();
+    
+    
+    ////// Q7
+    
+    dataSQL.printSchema();
+    
+    
+    
+    
+    //////// Q8 
+    
+    
+    
+    
+    
+    
     
     
     
