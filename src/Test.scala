@@ -10,6 +10,11 @@ import breeze.macros.expand.args
 import scala.collection.Seq
 import java.lang.Integer
 
+import org.apache.spark.sql.types.StructType
+import org.apache.spark.sql.types.IntegerType
+
+import org.apache.spark.sql.types.StringType
+
 object Test {
   def main(args: Array[String]) = {
     println("Hello, world");
@@ -173,10 +178,24 @@ object Test {
 
     import sparkSQL.implicits._
     
+    
+    
     ////////Q6 
     
-    val dataSQL= sparkSQL.read.option("header", "true").csv("C:/Users/med19/Desktop/Mohamed/INPT/Spark_Scala/Data/sample_data_final_wh.txt");
+    println("*********** Q6 *************");
+    val schema = new StructType()
+              .add("age",IntegerType,true)
+              .add("sanguin",StringType,true)
+              .add("ville",StringType,true)
+              .add("gender",StringType,true)
+              .add("id",IntegerType,true);
+    
+    val dataSQL= sparkSQL.read
+    .schema(schema)
+    .csv("C:/Users/med19/Desktop/Mohamed/INPT/Spark_Scala/Data/sample_data_final_wh.txt")
+    .cache();
    
+    
     //dataSQL.randomSplit([1.0, 2.0,0.6,0.5,1.3]);
     
     dataSQL.show();
@@ -190,6 +209,15 @@ object Test {
     
     
     //////// Q8 
+    
+    dataSQL.show(5);
+    
+    
+    
+    
+    ///// Q9 && Q10
+    
+    dataSQL.groupBy("gender").count().show();
     
     
     
