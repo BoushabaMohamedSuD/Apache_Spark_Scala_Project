@@ -105,15 +105,16 @@ object Test {
     val ratings_Format = ratings.withColumn("userId", toInt(ratings("userId")))
       .withColumn("movieId", toInt(ratings("movieId")))
       .withColumn("rating", toDouble(ratings("rating")))
-      .drop("timestamp");
+      .drop("timestamp").toDF();
     
     ratings_Format.printSchema();
+    ratings_Format.show();
 
     //val ratings =ss.read.json("C:/Users/med19/Desktop/Mohamed/INPT/Spark_Scala/Data/ml-latest-small/ratings.csv").toDF();
 
     // ratings.show();
 
-    /*val als = new ALS()
+      val als = new ALS()
       .setMaxIter(5)
       .setRegParam(0.01)
       .setUserCol("userId")
@@ -121,17 +122,16 @@ object Test {
       .setRatingCol("rating")
 
 
-    val model = als.fit(ratings);
+    val model = als.fit(ratings_Format);
 
 
 
     val userID:Int=args(0).toInt;
 
     val users=Seq(userID).toDF("userId");
-
     val ratingsProb=model.recommendForUserSubset(users, 10);
 
-    println(ratingsProb);*/
+    println(ratingsProb);
 
   }
 
