@@ -148,6 +148,22 @@ object Test {
     data.show();
     data.printSchema();
     
+    ////// Q3
+    data.cache().show();
+    println(data.rdd.getNumPartitions);
+    
+    
+    
+    ///// Q4
+    
+    println("*******  view top  2 rows  **************");
+    
+    data.show(2);
+    
+    
+    
+    //////  Q5 
+    
     
     
     
