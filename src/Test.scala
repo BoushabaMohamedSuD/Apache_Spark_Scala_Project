@@ -224,7 +224,21 @@ object Test {
     
     //// Q11
     
-    val count = countGender.select("name").show();
+    val count = countGender.select("count").show();
+    
+    
+    /// Q12  
+    
+    val averageAge=dataSQL.groupBy("age").avg("age");
+    averageAge.show();
+    
+    
+    
+    
+    
+    ///////               PART 3 //////////////////////////////////
+    
+    
     
     
     
