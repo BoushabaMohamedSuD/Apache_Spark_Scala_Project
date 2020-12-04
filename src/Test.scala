@@ -217,7 +217,16 @@ object Test {
     
     ///// Q9 && Q10
     
-    dataSQL.groupBy("gender").count().show();
+    val countGender= dataSQL.groupBy("gender").count();
+    countGender.show();
+    
+    
+    
+    //// Q11
+    
+    val count = countGender.select("name").show();
+    
+    
     
     
     
