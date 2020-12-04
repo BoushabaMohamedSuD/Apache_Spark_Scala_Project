@@ -165,6 +165,17 @@ object Test {
     //////  Q5 
     
     
+      val sparkSQL = SparkSession
+      .builder
+      .appName("retings")
+      .master("local[*]")
+      .getOrCreate();
+
+    import sparkSQL.implicits._
+    
+    ////////Q6 
+    
+    
     
     
 
