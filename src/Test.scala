@@ -122,7 +122,7 @@ object Test {
       .setRatingCol("rating")
 
 
-    val model = als.fit(ratings_Format);
+    /*val model = als.fit(ratings_Format);
 
 
 
@@ -132,6 +132,25 @@ object Test {
     val ratingsProb=model.recommendForUserSubset(users, 10);
 
     println(ratingsProb);
+    */
+    
+    
+    
+    //////////////////////// PART 2 ///////////////////////////////////////////////
+    
+    
+    
+    //////Q1 & Q2
+    
+    
+    val data = ss.read.option("header", "true").csv("C:/Users/med19/Desktop/Mohamed/INPT/Spark_Scala/Data/sample_data_final_wh.txt");
+    
+    data.show();
+    data.printSchema();
+    
+    
+    
+    
 
   }
 
